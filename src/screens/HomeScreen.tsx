@@ -95,6 +95,21 @@ function HomeScreenInner() {
     return () => clearTimeout(timer);
   }, [activeCampaign, dismissCampaign]);
 
+  // Splice campaign-specific rows into the feed when a campaign is active.
+  const visibleBlocks = React.useMemo((): Block[] => {
+    const base = screen.blocks as Block[];
+    if (activeCampaign === null || !activeCampaign.injectBlocks?.length) {
+      return base;
+    }
+    const result = [...base];
+    const afterId = activeCampaign.injectAfterBlockId;
+    const insertAt = afterId !== undefined
+      ? result.findIndex((b) => b.id === afterId) + 1
+      : 1;
+    result.splice(insertAt > 0 ? insertAt : 1, 0, ...(activeCampaign.injectBlocks as Block[]));
+    return result;
+  }, [activeCampaign]);
+
   const keyExtractor = useCallback((block: Block) => block.id, []);
   const getItemType = useCallback((block: Block) => block.type, []);
   const renderItem = useCallback(
@@ -105,7 +120,7 @@ function HomeScreenInner() {
   return (
     <View style={styles.container}>
       <FlashList
-        data={screen.blocks as Block[]}
+        data={visibleBlocks}
         keyExtractor={keyExtractor}
         getItemType={getItemType}
         renderItem={renderItem}

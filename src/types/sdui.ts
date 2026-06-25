@@ -195,6 +195,10 @@ export interface CampaignDefinition {
   readonly name: string;
   readonly themeOverride: Theme;
   readonly overlay: FullScreenOverlay;
+  /** Blocks to splice into the feed when this campaign is active. */
+  readonly injectBlocks?: readonly Block[];
+  /** Inject immediately after the block with this id. Defaults to after blk-01. */
+  readonly injectAfterBlockId?: string;
 }
 
 /** JSON-delivered campaign — extends CampaignDefinition with server-side metadata. */

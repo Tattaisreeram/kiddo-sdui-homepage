@@ -1818,7 +1818,80 @@
           "card": 12,
           "button": 24
         }
-      }
+      },
+      "injectAfterBlockId": "blk-15",
+      "injectBlocks": [
+        {
+          "id": "blk-camp-json-mystery-picks",
+          "type": "DYNAMIC_COLLECTION",
+          "data": {
+            "title": "Mystery Gift Picks",
+            "layout": "horizontal_scroll",
+            "showViewAll": false,
+            "items": [
+              {
+                "id": "jmg-item-1",
+                "imageUrl": "https://picsum.photos/seed/jmg-box1/110/110",
+                "label": "Mystery Box Lv.1",
+                "action": {
+                  "type": "APPLY_MYSTERY_GIFT_COUPON",
+                  "payload": {
+                    "couponCode": "MYSTERY-BOX-1",
+                    "campaignId": "camp-mystery-gift-2026",
+                    "expiresAt": "2026-07-15T23:59:59+05:30"
+                  }
+                }
+              },
+              {
+                "id": "jmg-item-2",
+                "imageUrl": "https://picsum.photos/seed/jmg-box2/110/110",
+                "label": "Mystery Box Lv.2",
+                "action": {
+                  "type": "APPLY_MYSTERY_GIFT_COUPON",
+                  "payload": {
+                    "couponCode": "MYSTERY-BOX-2",
+                    "campaignId": "camp-mystery-gift-2026",
+                    "expiresAt": "2026-07-15T23:59:59+05:30"
+                  }
+                }
+              },
+              {
+                "id": "jmg-item-3",
+                "imageUrl": "https://picsum.photos/seed/jmg-toy/110/110",
+                "label": "Surprise Toy Pack",
+                "action": {
+                  "type": "DEEP_LINK",
+                  "payload": {
+                    "url": "kiddo://product/jmg-toy"
+                  }
+                }
+              },
+              {
+                "id": "jmg-item-4",
+                "imageUrl": "https://picsum.photos/seed/jmg-lucky/110/110",
+                "label": "Lucky Dip Bundle",
+                "action": {
+                  "type": "DEEP_LINK",
+                  "payload": {
+                    "url": "kiddo://product/jmg-lucky"
+                  }
+                }
+              },
+              {
+                "id": "jmg-item-5",
+                "imageUrl": "https://picsum.photos/seed/jmg-snack/110/110",
+                "label": "Mystery Snack Kit",
+                "action": {
+                  "type": "DEEP_LINK",
+                  "payload": {
+                    "url": "kiddo://product/jmg-snack"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   ]
 }

@@ -161,6 +161,7 @@ const DynamicCollection = React.memo(function DynamicCollection({
       ) : (
         <FlashList
           horizontal
+          nestedScrollEnabled
           data={data.items as CollectionItem[]}
           keyExtractor={keyExtractor}
           renderItem={renderItem}
