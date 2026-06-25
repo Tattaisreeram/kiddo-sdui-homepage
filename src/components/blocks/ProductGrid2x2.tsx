@@ -1,13 +1,65 @@
 import React from 'react';
 import { StyleSheet, View, Text, Pressable } from 'react-native';
 import { Image } from 'expo-image';
+import { useRecyclingState } from '@shopify/flash-list';
 import type { Block, Product } from '../../types/sdui';
 import { isProductGrid2x2Block } from '../../types/sdui';
 import { handleAction } from '../../actions/dispatcher';
+import { useCartStore } from '../../store/cartStore';
 import { useTheme } from '../../theme/ThemeContext';
 
+/**
+ * MEMOIZATION BOUNDARIES — why only the tapped card and CartBadge re-render
+ * ────────────────────────────────────────────────────────────────────────────
+ * 1. React.memo (ProductCard)
+ *    ProductCard's only prop is `product`, a stable object reference from the
+ *    ProductGrid2x2.tsx `data.products.slice(0,4)` array. ProductGrid2x2 is
+ *    itself React.memo'd and holds NO cart subscription, so it never re-renders
+ *    from a cart change — meaning ProductCard never receives new props from above.
+ *    React.memo's shallow comparison short-circuits every sibling card.
+ *
+ * 2. Zustand selector  useCartStore(s => s.items[product.id] ?? 0)
+ *    Returns a primitive number. Zustand compares selector results with ===.
+ *    On ADD_TO_CART for PROD-001: only items['PROD-001'] changes, so only that
+ *    card's selector returns a new value and triggers a re-render. All other
+ *    cards' selectors return the same number they returned before → skipped.
+ *
+ * 3. useRecyclingState(0, [product.id])
+ *    FlashList reuses React component instances when recycling cells. Regular
+ *    useState would preserve localQty across recycling, showing the old product's
+ *    count on the newly assigned product. useRecyclingState resets localQty to 0
+ *    synchronously when product.id changes — before the next paint — eliminating
+ *    the stale-count flash that a useEffect-based reset would produce.
+ *
+ * Net result: one ADD tap → exactly 2 re-renders across the entire tree:
+ *   • This ProductCard  (its cartQty selector returned a new number)
+ *   • CartBadge         (its totalCount selector returned a new number)
+ *   Every other block, ProductCard, and the FlashList root stays silent.
+ */
 const ProductCard = React.memo(function ProductCard({ product }: { readonly product: Product }) {
   const { theme } = useTheme();
+
+  // ── selector: re-renders ONLY when this product's cart qty changes ────────
+  const cartQty = useCartStore((s) => s.items[product.id] ?? 0);
+
+  // ── local stepper: resets to 0 when FlashList recycles this cell ─────────
+  const [localQty, setLocalQty] = useRecyclingState<number>(0, [product.id]);
+
+  // ── render-count log: confirms sibling cards stay silent ─────────────────
+  const renderCount = React.useRef(0);
+  renderCount.current += 1;
+  if (__DEV__) {
+    console.log(`[render] ProductCard ${product.id} #${renderCount.current}  cartQty=${cartQty}  localQty=${localQty}`);
+  }
+
+  const handleAdd = () => {
+    useCartStore.getState().addToCart(product.id);
+    setLocalQty((q) => q + 1);
+    // also propagate through the action dispatcher for any middleware listeners
+    handleAction(product.addToCartAction);
+  };
+
+  const inCartLabel = cartQty > 0 ? ` (${cartQty} in cart)` : '';
 
   return (
     <Pressable
@@ -51,7 +103,12 @@ const ProductCard = React.memo(function ProductCard({ product }: { readonly prod
           </View>
         )}
         {!product.inStock && (
-          <View style={[styles.outOfStock, { borderRadius: theme.radii.card }]}>
+          <View
+            style={[
+              styles.outOfStock,
+              { borderRadius: theme.radii.card },
+            ]}
+          >
             <Text
               style={[
                 styles.outOfStockText,
@@ -126,11 +183,16 @@ const ProductCard = React.memo(function ProductCard({ product }: { readonly prod
           <Pressable
             style={[
               styles.addBtn,
-              { backgroundColor: theme.colors.primary, borderRadius: theme.radii.button },
+              {
+                backgroundColor: localQty > 0
+                  ? theme.colors.success
+                  : theme.colors.primary,
+                borderRadius: theme.radii.button,
+              },
             ]}
-            onPress={() => handleAction(product.addToCartAction)}
+            onPress={handleAdd}
             accessibilityRole="button"
-            accessibilityLabel={`Add ${product.name} to cart`}
+            accessibilityLabel={`Add ${product.name} to cart${inCartLabel}`}
           >
             <Text
               style={[
@@ -142,7 +204,7 @@ const ProductCard = React.memo(function ProductCard({ product }: { readonly prod
                 },
               ]}
             >
-              Add
+              {localQty === 0 ? 'Add' : `${localQty} Added`}
             </Text>
           </Pressable>
         )}

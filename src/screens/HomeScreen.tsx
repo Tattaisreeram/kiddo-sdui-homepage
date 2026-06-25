@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 import { Image } from 'expo-image';
@@ -7,6 +7,7 @@ import type { Block, OverlayContent, Screen } from '../types/sdui';
 import { resolveComponent } from '../registry/componentRegistry';
 import { ThemeProvider, useTheme } from '../theme/ThemeContext';
 import { useHomepageStore } from '../store/homepageStore';
+import { CartBadge } from '../components/CartBadge';
 import screenDataJson from '../data/homepage.json';
 
 const screen = screenDataJson as unknown as Screen;
@@ -18,6 +19,15 @@ const BlockRenderer = React.memo(function BlockRenderer({
 }: {
   readonly block: Block;
 }) {
+  // Render-count log: in __DEV__ confirm that sibling blocks do NOT re-render
+  // when a ProductCard's ADD_TO_CART fires. Each block should log #1 on mount
+  // and then go silent while only the tapped card and CartBadge increment.
+  const renderCount = useRef(0);
+  renderCount.current += 1;
+  if (__DEV__) {
+    console.log(`[render] block  ${block.type}:${block.id}  #${renderCount.current}`);
+  }
+
   const Component = resolveComponent(block.type);
   if (Component === null) return null;
   return <Component block={block} />;
@@ -113,6 +123,10 @@ function HomeScreenInner() {
         getItemType={getItemType}
         renderItem={renderItem}
       />
+      {/* Cart badge — floats top-right; subscribes only to totalCount */}
+      <View style={styles.cartBadgeAnchor} pointerEvents="box-none">
+        <CartBadge />
+      </View>
       {activeCampaign !== null && (
         <CampaignOverlay
           backdropOpacity={activeCampaign.overlay.backdropOpacity}
@@ -136,4 +150,10 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   overlay: { zIndex: 999 },
+  cartBadgeAnchor: {
+    position: 'absolute',
+    top: 48,
+    right: 16,
+    zIndex: 100,
+  },
 });
