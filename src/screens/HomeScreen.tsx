@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text, Pressable } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 import type { Block, Screen } from '../types/sdui';
 import { resolveComponent } from '../registry/componentRegistry';
@@ -8,6 +8,7 @@ import { useHomepageStore } from '../store/homepageStore';
 import { CartBadge } from '../components/CartBadge';
 import { BlockErrorBoundary } from '../components/BlockErrorBoundary';
 import { CampaignOverlay } from '../campaign/CampaignOverlay';
+import { CAMPAIGNS } from '../campaigns/campaignData';
 import screenDataJson from '../data/homepage.json';
 
 const screen = screenDataJson as unknown as Screen;
@@ -33,6 +34,39 @@ const BlockRenderer = React.memo(function BlockRenderer({
     </BlockErrorBoundary>
   );
 });
+
+// Visible only in development builds; zero production bundle impact.
+function DevCampaignPanel() {
+  const activateCampaign = useHomepageStore((s) => s.activateCampaign);
+  const dismissCampaign = useHomepageStore((s) => s.dismissCampaign);
+
+  return (
+    // box-none so the list under the panel remains fully tappable
+    <View style={devStyles.panel} pointerEvents="box-none">
+      {CAMPAIGNS.map((c) => (
+        <Pressable
+          key={c.id}
+          onPress={() => activateCampaign(c)}
+          style={[devStyles.btn, { backgroundColor: c.themeOverride.colors.primary }]}
+          accessibilityRole="button"
+          accessibilityLabel={`Activate ${c.name} campaign`}
+        >
+          <Text style={devStyles.btnText} numberOfLines={1}>
+            {c.name}
+          </Text>
+        </Pressable>
+      ))}
+      <Pressable
+        onPress={dismissCampaign}
+        style={[devStyles.btn, devStyles.resetBtn]}
+        accessibilityRole="button"
+        accessibilityLabel="Reset campaign"
+      >
+        <Text style={devStyles.btnText}>Reset</Text>
+      </Pressable>
+    </View>
+  );
+}
 
 function HomeScreenInner() {
   const { setTheme } = useTheme();
@@ -82,6 +116,7 @@ function HomeScreenInner() {
       {activeCampaign !== null && (
         <CampaignOverlay overlay={activeCampaign.overlay} />
       )}
+      {__DEV__ && <DevCampaignPanel />}
     </View>
   );
 }
@@ -102,4 +137,25 @@ const styles = StyleSheet.create({
     right: 16,
     zIndex: 100,
   },
+});
+
+const devStyles = StyleSheet.create({
+  panel: {
+    position: 'absolute',
+    bottom: 24,
+    left: 8,
+    right: 8,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
+    zIndex: 500,
+  },
+  btn: {
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderRadius: 20,
+    opacity: 0.92,
+  },
+  resetBtn: { backgroundColor: '#555' },
+  btnText: { color: '#FFF', fontSize: 11, fontWeight: '700' },
 });
