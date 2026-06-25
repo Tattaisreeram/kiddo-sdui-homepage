@@ -15,6 +15,10 @@ import { useTheme } from '../../theme/ThemeContext';
 const ProductCard = React.memo(function ProductCard({ product }: { readonly product: Product }) {
   const { theme } = useTheme();
 
+  // Server may omit optional fields in partial responses — guard at runtime
+  const name = (product.name as string | undefined) ?? '';
+  const inStock = (product.inStock as boolean | undefined) ?? false;
+
   // ── selector: re-renders ONLY when this product's cart qty changes ────────
   const cartQty = useCartStore((s) => s.items[product.id] ?? 0);
 
@@ -48,7 +52,7 @@ const ProductCard = React.memo(function ProductCard({ product }: { readonly prod
       ]}
       onPress={() => handleAction(product.tapAction)}
       accessibilityRole="button"
-      accessibilityLabel={product.name}
+      accessibilityLabel={name || product.id}
     >
       <View style={styles.imageWrap}>
         <Image
@@ -77,7 +81,7 @@ const ProductCard = React.memo(function ProductCard({ product }: { readonly prod
             </Text>
           </View>
         )}
-        {!product.inStock && (
+        {!inStock && (
           <View
             style={[
               styles.outOfStock,
@@ -124,7 +128,7 @@ const ProductCard = React.memo(function ProductCard({ product }: { readonly prod
           ]}
           numberOfLines={2}
         >
-          {product.name}
+          {name}
         </Text>
         <View style={styles.priceRow}>
           <Text
@@ -154,7 +158,7 @@ const ProductCard = React.memo(function ProductCard({ product }: { readonly prod
             </Text>
           )}
         </View>
-        {product.inStock && (
+        {inStock && (
           <Pressable
             style={[
               styles.addBtn,
@@ -167,7 +171,7 @@ const ProductCard = React.memo(function ProductCard({ product }: { readonly prod
             ]}
             onPress={handleAdd}
             accessibilityRole="button"
-            accessibilityLabel={`Add ${product.name} to cart${inCartLabel}`}
+            accessibilityLabel={`Add ${name || product.id} to cart${inCartLabel}`}
           >
             <Text
               style={[
