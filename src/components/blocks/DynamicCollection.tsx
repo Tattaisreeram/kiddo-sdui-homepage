@@ -42,6 +42,43 @@ const CollectionItemCard = React.memo(function CollectionItemCard({
   );
 });
 
+const ChipItem = React.memo(function ChipItem({ item }: { readonly item: CollectionItem }) {
+  const { theme } = useTheme();
+  return (
+    <Pressable
+      style={[
+        styles.chip,
+        { marginRight: theme.spacing.sm, marginBottom: theme.spacing.sm },
+      ]}
+      onPress={() => handleAction(item.action)}
+      accessibilityRole="button"
+      accessibilityLabel={item.label}
+    >
+      <Image
+        source={{ uri: item.imageUrl }}
+        style={[
+          styles.chipImage,
+          { borderRadius: theme.radii.full, borderColor: theme.colors.border },
+        ]}
+        contentFit="cover"
+      />
+      <Text
+        style={[
+          styles.chipLabel,
+          {
+            color: theme.colors.text,
+            fontSize: theme.typography.sizeXs,
+            fontFamily: theme.typography.fontFamilyRegular,
+          },
+        ]}
+        numberOfLines={1}
+      >
+        {item.label}
+      </Text>
+    </Pressable>
+  );
+});
+
 const DynamicCollection = React.memo(function DynamicCollection({
   block,
 }: {
@@ -115,14 +152,22 @@ const DynamicCollection = React.memo(function DynamicCollection({
           </Pressable>
         )}
       </View>
-      <FlashList
-        horizontal
-        data={data.items as CollectionItem[]}
-        keyExtractor={keyExtractor}
-        renderItem={renderItem}
-        contentContainerStyle={{ paddingHorizontal: theme.spacing.md }}
-        showsHorizontalScrollIndicator={false}
-      />
+      {data.layout === 'chips' ? (
+        <View style={[styles.chipsWrap, { paddingHorizontal: theme.spacing.md }]}>
+          {data.items.map((item) => (
+            <ChipItem key={item.id} item={item} />
+          ))}
+        </View>
+      ) : (
+        <FlashList
+          horizontal
+          data={data.items as CollectionItem[]}
+          keyExtractor={keyExtractor}
+          renderItem={renderItem}
+          contentContainerStyle={{ paddingHorizontal: theme.spacing.md }}
+          showsHorizontalScrollIndicator={false}
+        />
+      )}
     </View>
   );
 });
@@ -143,4 +188,8 @@ const styles = StyleSheet.create({
   itemCard: { width: 110 },
   itemImage: { width: 110, height: 110 },
   itemLabel: { marginTop: 6, textAlign: 'center' },
+  chipsWrap: { flexDirection: 'row', flexWrap: 'wrap' },
+  chip: { alignItems: 'center', width: 72 },
+  chipImage: { width: 56, height: 56, borderWidth: 1 },
+  chipLabel: { marginTop: 4, textAlign: 'center' },
 });
