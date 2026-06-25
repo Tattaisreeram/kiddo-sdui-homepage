@@ -1349,12 +1349,10 @@
       "expiresAt": "2026-07-15T23:59:59+05:30",
       "overlay": {
         "id": "overlay-confetti-burst",
-        "content": {
-          "kind": "lottie",
-          "lottieUrl": "https://cdn.kiddo.in/lottie/confetti-burst.json",
-          "loop": false,
-          "autoPlay": true
-        },
+        "type": "lottie",
+        "animation_url": "https://cdn.kiddo.in/lottie/confetti-burst.json",
+        "loop": false,
+        "autoPlay": true,
         "backdropOpacity": 0.35,
         "autoDismissMs": 4000
       },

@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { Campaign } from '../types/sdui';
+import type { CampaignDefinition } from '../types/sdui';
 
 interface CartItem {
   readonly qty: number;
@@ -12,9 +12,9 @@ interface HomepageStore {
   readonly addToCart: (productId: string, qty: number, variantId?: string) => void;
   readonly removeFromCart: (productId: string) => void;
   readonly clearCart: () => void;
-  // campaign
-  readonly activeCampaign: Campaign | null;
-  readonly activateCampaign: (campaign: Campaign) => void;
+  // campaign — accepts both JSON campaigns and code-defined CampaignDefinitions
+  readonly activeCampaign: CampaignDefinition | null;
+  readonly activateCampaign: (campaign: CampaignDefinition) => void;
   readonly dismissCampaign: () => void;
 }
 

@@ -1,6 +1,9 @@
 import { Alert } from 'react-native';
-import type { Action } from '../types/sdui';
+import type { Action, Screen } from '../types/sdui';
 import { useHomepageStore } from '../store/homepageStore';
+import screenDataJson from '../data/homepage.json';
+
+const screen = screenDataJson as unknown as Screen;
 
 function assertNever(x: never): never {
   throw new Error(`[dispatcher] unhandled action: ${JSON.stringify(x)}`);
@@ -21,9 +24,13 @@ export function handleAction(action: Action): void {
     }
     case 'APPLY_MYSTERY_GIFT_COUPON': {
       const { couponCode, campaignId } = action.payload;
+      const campaign = screen.campaigns.find((c) => c.id === campaignId);
+      if (campaign !== undefined && new Date(campaign.expiresAt) > new Date()) {
+        useHomepageStore.getState().activateCampaign(campaign);
+      }
       Alert.alert(
         'Mystery Gift Unlocked!',
-        `Coupon ${couponCode} applied (campaign ${campaignId}).`,
+        `Coupon ${couponCode} applied!`,
         [{ text: 'Yay!', style: 'default' }],
       );
       break;

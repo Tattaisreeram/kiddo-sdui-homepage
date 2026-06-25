@@ -179,30 +179,26 @@ export function isDynamicCollectionBlock(b: Block): b is DynamicCollectionBlock 
   return b.type === 'DYNAMIC_COLLECTION';
 }
 
-export type OverlayContent =
-  | {
-      readonly kind: 'lottie';
-      readonly lottieUrl: string;
-      readonly loop: boolean;
-      readonly autoPlay: boolean;
-    }
-  | {
-      readonly kind: 'image';
-      readonly imageUrl: string;
-    };
-
-export interface Overlay {
+export interface FullScreenOverlay {
   readonly id: string;
-  readonly content: OverlayContent;
+  readonly type: 'lottie' | 'image';
+  readonly animation_url: string;
+  readonly loop: boolean;
+  readonly autoPlay: boolean;
   readonly backdropOpacity: number;
   readonly autoDismissMs: number | null;
 }
 
-export interface Campaign {
+/** Code-defined campaign — no expiry, no trigger flag. */
+export interface CampaignDefinition {
   readonly id: string;
   readonly name: string;
   readonly themeOverride: Theme;
-  readonly overlay: Overlay;
+  readonly overlay: FullScreenOverlay;
+}
+
+/** JSON-delivered campaign — extends CampaignDefinition with server-side metadata. */
+export interface Campaign extends CampaignDefinition {
   readonly triggerOnLoad: boolean;
   readonly expiresAt: string;
 }
