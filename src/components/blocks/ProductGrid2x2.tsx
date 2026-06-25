@@ -8,34 +8,10 @@ import { handleAction } from '../../actions/dispatcher';
 import { useCartStore } from '../../store/cartStore';
 import { useTheme } from '../../theme/ThemeContext';
 
-/**
- * MEMOIZATION BOUNDARIES — why only the tapped card and CartBadge re-render
- * ────────────────────────────────────────────────────────────────────────────
- * 1. React.memo (ProductCard)
- *    ProductCard's only prop is `product`, a stable object reference from the
- *    ProductGrid2x2.tsx `data.products.slice(0,4)` array. ProductGrid2x2 is
- *    itself React.memo'd and holds NO cart subscription, so it never re-renders
- *    from a cart change — meaning ProductCard never receives new props from above.
- *    React.memo's shallow comparison short-circuits every sibling card.
- *
- * 2. Zustand selector  useCartStore(s => s.items[product.id] ?? 0)
- *    Returns a primitive number. Zustand compares selector results with ===.
- *    On ADD_TO_CART for PROD-001: only items['PROD-001'] changes, so only that
- *    card's selector returns a new value and triggers a re-render. All other
- *    cards' selectors return the same number they returned before → skipped.
- *
- * 3. useRecyclingState(0, [product.id])
- *    FlashList reuses React component instances when recycling cells. Regular
- *    useState would preserve localQty across recycling, showing the old product's
- *    count on the newly assigned product. useRecyclingState resets localQty to 0
- *    synchronously when product.id changes — before the next paint — eliminating
- *    the stale-count flash that a useEffect-based reset would produce.
- *
- * Net result: one ADD tap → exactly 2 re-renders across the entire tree:
- *   • This ProductCard  (its cartQty selector returned a new number)
- *   • CartBadge         (its totalCount selector returned a new number)
- *   Every other block, ProductCard, and the FlashList root stays silent.
- */
+// Re-render isolation:
+// - React.memo: ProductGrid2x2 never re-renders from cart changes, so props are stable
+// - selector returns a primitive so only the matching product triggers a re-render
+// - useRecyclingState resets localQty synchronously on cell recycle (no stale count flash)
 const ProductCard = React.memo(function ProductCard({ product }: { readonly product: Product }) {
   const { theme } = useTheme();
 
@@ -55,7 +31,6 @@ const ProductCard = React.memo(function ProductCard({ product }: { readonly prod
   const handleAdd = () => {
     useCartStore.getState().addToCart(product.id);
     setLocalQty((q) => q + 1);
-    // also propagate through the action dispatcher for any middleware listeners
     handleAction(product.addToCartAction);
   };
 

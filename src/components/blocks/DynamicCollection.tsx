@@ -7,10 +7,6 @@ import { isDynamicCollectionBlock } from '../../types/sdui';
 import { handleAction } from '../../actions/dispatcher';
 import { useTheme } from '../../theme/ThemeContext';
 
-// Items have stable server-assigned IDs, so a plain keyExtractor is sufficient.
-// useMappingHelper (FlashList v2) would only be needed if items were generated
-// inline without stable keys.
-
 const CollectionItemCard = React.memo(function CollectionItemCard({
   item,
 }: {
@@ -119,8 +115,6 @@ const DynamicCollection = React.memo(function DynamicCollection({
           </Pressable>
         )}
       </View>
-      {/* Horizontal nested FlashList — v2 New Architecture handles nested
-          horizontal-in-vertical without the height measurement hacks of v1. */}
       <FlashList
         horizontal
         data={data.items as CollectionItem[]}

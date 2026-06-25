@@ -3,13 +3,6 @@ import { StyleSheet, View, Text } from 'react-native';
 import { useCartStore } from '../store/cartStore';
 import { useTheme } from '../theme/ThemeContext';
 
-/**
- * Subscribes ONLY to totalCount via a Zustand selector.
- * When individual items change but totalCount does not (impossible with addToCart,
- * but safe by design), this component will not re-render. The primitive selector
- * return value is compared with === so Zustand skips the re-render when the
- * number hasn't changed.
- */
 export const CartBadge = React.memo(function CartBadge() {
   const totalCount = useCartStore((s) => s.totalCount);
   const { theme } = useTheme();

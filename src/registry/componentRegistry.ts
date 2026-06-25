@@ -6,10 +6,7 @@ import DynamicCollection from '../components/blocks/DynamicCollection';
 
 export type BlockFactory = React.ComponentType<{ readonly block: Block }>;
 
-// Hash-map registry — no switch statements.
-// React.memo returns MemoExoticComponent which is not structurally identical to
-// ComponentType, so we use `as unknown as BlockFactory` to satisfy the Record type
-// while keeping the registry itself fully typed via the KnownBlockType key.
+// MemoExoticComponent isn't structurally assignable to ComponentType, so cast
 const registry: Record<KnownBlockType, BlockFactory> = {
   BANNER_HERO: BannerHero as unknown as BlockFactory,
   PRODUCT_GRID_2X2: ProductGrid2x2 as unknown as BlockFactory,

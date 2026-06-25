@@ -1,5 +1,3 @@
-// ─── Theme ────────────────────────────────────────────────────────────────────
-
 export interface ColorTokens {
   readonly background: string;
   readonly surface: string;
@@ -17,12 +15,12 @@ export interface ColorTokens {
 }
 
 export interface SpacingTokens {
-  readonly xs: number;   // 4
-  readonly sm: number;   // 8
-  readonly md: number;   // 16
-  readonly lg: number;   // 24
-  readonly xl: number;   // 32
-  readonly '2xl': number; // 48
+  readonly xs: number;
+  readonly sm: number;
+  readonly md: number;
+  readonly lg: number;
+  readonly xl: number;
+  readonly '2xl': number;
 }
 
 export interface TypographyTokens {
@@ -55,8 +53,6 @@ export interface Theme {
   readonly radii: RadiiTokens;
 }
 
-// ─── Actions ──────────────────────────────────────────────────────────────────
-
 export interface AddToCartAction {
   readonly type: 'ADD_TO_CART';
   readonly payload: {
@@ -79,7 +75,7 @@ export interface ApplyMysteryGiftCouponAction {
   readonly payload: {
     readonly couponCode: string;
     readonly campaignId: string;
-    readonly expiresAt: string; // ISO 8601
+    readonly expiresAt: string;
   };
 }
 
@@ -87,8 +83,6 @@ export type Action =
   | AddToCartAction
   | DeepLinkAction
   | ApplyMysteryGiftCouponAction;
-
-// ─── Shared sub-shapes ────────────────────────────────────────────────────────
 
 export interface Product {
   readonly id: string;
@@ -100,7 +94,7 @@ export interface Product {
   readonly discountPercent?: number;
   readonly badge?: string;
   readonly inStock: boolean;
-  readonly rating?: number;          // 1–5
+  readonly rating?: number;
   readonly reviewCount?: number;
   readonly addToCartAction: AddToCartAction;
   readonly tapAction: DeepLinkAction;
@@ -113,8 +107,6 @@ export interface CollectionItem {
   readonly action: Action;
 }
 
-// ─── Block data shapes ────────────────────────────────────────────────────────
-
 export interface BannerHeroData {
   readonly imageUrl: string;
   readonly imageAltText: string;
@@ -122,7 +114,7 @@ export interface BannerHeroData {
   readonly subtitle?: string;
   readonly ctaLabel: string;
   readonly ctaAction: Action;
-  readonly aspectRatio: number; // width / height, e.g. 1.91 for 16:8.4
+  readonly aspectRatio: number;
   readonly hasOverlayGradient: boolean;
 }
 
@@ -140,8 +132,6 @@ export interface DynamicCollectionData {
   readonly showViewAll: boolean;
   readonly viewAllAction?: DeepLinkAction;
 }
-
-// ─── Block discriminated union ─────────────────────────────────────────────────
 
 export interface BannerHeroBlock {
   readonly id: string;
@@ -161,9 +151,7 @@ export interface DynamicCollectionBlock {
   readonly data: DynamicCollectionData;
 }
 
-// Catch-all for block types the client does not yet recognise.
-// type is string (not a literal) so automatic narrowing of Block by .type
-// will NOT exclude this member — use the isXxxBlock type guards below instead.
+// catch-all for block types the client doesn't recognise yet
 export interface UnknownBlock {
   readonly id: string;
   readonly type: string;
@@ -181,8 +169,6 @@ export type Block =
   | DynamicCollectionBlock
   | UnknownBlock;
 
-// Type guards — use these instead of raw equality checks on block.type
-// so TypeScript narrows correctly without pulling UnknownBlock into the result.
 export function isBannerHeroBlock(b: Block): b is BannerHeroBlock {
   return b.type === 'BANNER_HERO';
 }
@@ -192,8 +178,6 @@ export function isProductGrid2x2Block(b: Block): b is ProductGrid2x2Block {
 export function isDynamicCollectionBlock(b: Block): b is DynamicCollectionBlock {
   return b.type === 'DYNAMIC_COLLECTION';
 }
-
-// ─── Overlay ──────────────────────────────────────────────────────────────────
 
 export type OverlayContent =
   | {
@@ -210,11 +194,9 @@ export type OverlayContent =
 export interface Overlay {
   readonly id: string;
   readonly content: OverlayContent;
-  readonly backdropOpacity: number;    // 0.0–1.0
-  readonly autoDismissMs: number | null; // null = stays until dismissed explicitly
+  readonly backdropOpacity: number;
+  readonly autoDismissMs: number | null;
 }
-
-// ─── Campaign ─────────────────────────────────────────────────────────────────
 
 export interface Campaign {
   readonly id: string;
@@ -222,15 +204,13 @@ export interface Campaign {
   readonly themeOverride: Theme;
   readonly overlay: Overlay;
   readonly triggerOnLoad: boolean;
-  readonly expiresAt: string; // ISO 8601
+  readonly expiresAt: string;
 }
-
-// ─── Root Screen payload ───────────────────────────────────────────────────────
 
 export interface Screen {
   readonly schemaVersion: string;
   readonly screenId: string;
-  readonly fetchedAt: string; // ISO 8601
+  readonly fetchedAt: string;
   readonly theme: Theme;
   readonly blocks: readonly Block[];
   readonly campaigns: readonly Campaign[];
