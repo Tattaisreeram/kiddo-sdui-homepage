@@ -30,7 +30,7 @@ const BannerHero = React.memo(function BannerHero({ block }: { readonly block: B
               color: theme.colors.primaryForeground,
               fontFamily: theme.typography.fontFamilyBold,
               fontSize: theme.typography.sizeXl,
-              lineHeight: theme.typography.lineHeightHeading,
+              lineHeight: theme.typography.sizeXl * theme.typography.lineHeightHeading,
             },
           ]}
         >
@@ -44,7 +44,7 @@ const BannerHero = React.memo(function BannerHero({ block }: { readonly block: B
                 color: theme.colors.primaryForeground,
                 fontFamily: theme.typography.fontFamilyRegular,
                 fontSize: theme.typography.sizeMd,
-                lineHeight: theme.typography.lineHeightBody,
+                lineHeight: theme.typography.sizeMd * theme.typography.lineHeightBody,
               },
             ]}
           >
