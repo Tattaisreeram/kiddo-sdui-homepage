@@ -6,6 +6,7 @@ import { resolveComponent } from '../registry/componentRegistry';
 import { ThemeProvider, useTheme } from '../theme/ThemeContext';
 import { useHomepageStore } from '../store/homepageStore';
 import { CartBadge } from '../components/CartBadge';
+import { BlockErrorBoundary } from '../components/BlockErrorBoundary';
 import { CampaignOverlay } from '../campaign/CampaignOverlay';
 import screenDataJson from '../data/homepage.json';
 
@@ -24,7 +25,13 @@ const BlockRenderer = React.memo(function BlockRenderer({
 
   const Component = resolveComponent(block.type);
   if (Component === null) return null;
-  return <Component block={block} />;
+  // BlockErrorBoundary catches render crashes so one corrupt block cannot
+  // unmount the entire feed.
+  return (
+    <BlockErrorBoundary block={block}>
+      <Component block={block} />
+    </BlockErrorBoundary>
+  );
 });
 
 function HomeScreenInner() {
