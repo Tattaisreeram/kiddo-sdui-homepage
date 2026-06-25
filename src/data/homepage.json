@@ -48,27 +48,27 @@
       "button": 24
     }
   },
-
   "blocks": [
-
     {
       "id": "blk-01",
       "type": "BANNER_HERO",
       "data": {
-        "imageUrl": "https://cdn.kiddo.in/images/banners/homepage-hero-june2026.webp",
+        "imageUrl": "https://picsum.photos/seed/hero-june/800/418",
         "imageAltText": "Happy baby surrounded by colourful toys",
         "title": "Everything Your Little One Needs",
         "subtitle": "Fresh stock every day. Delivered in 10 minutes.",
         "ctaLabel": "Shop Now",
         "ctaAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://home", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://home",
+            "presentationStyle": "push"
+          }
         },
         "aspectRatio": 1.91,
         "hasOverlayGradient": true
       }
     },
-
     {
       "id": "blk-02",
       "type": "DYNAMIC_COLLECTION",
@@ -79,38 +79,62 @@
         "items": [
           {
             "id": "age-0-6m",
-            "imageUrl": "https://cdn.kiddo.in/images/age-icons/0-6m.webp",
+            "imageUrl": "https://picsum.photos/seed/age-0-6m/120/120",
             "label": "0–6 M",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://age/0-6m" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://age/0-6m"
+              }
+            }
           },
           {
             "id": "age-6-12m",
-            "imageUrl": "https://cdn.kiddo.in/images/age-icons/6-12m.webp",
+            "imageUrl": "https://picsum.photos/seed/age-6-12m/120/120",
             "label": "6–12 M",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://age/6-12m" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://age/6-12m"
+              }
+            }
           },
           {
             "id": "age-1-3y",
-            "imageUrl": "https://cdn.kiddo.in/images/age-icons/1-3y.webp",
+            "imageUrl": "https://picsum.photos/seed/age-1-3y/120/120",
             "label": "1–3 Yrs",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://age/1-3y" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://age/1-3y"
+              }
+            }
           },
           {
             "id": "age-3-5y",
-            "imageUrl": "https://cdn.kiddo.in/images/age-icons/3-5y.webp",
+            "imageUrl": "https://picsum.photos/seed/age-3-5y/120/120",
             "label": "3–5 Yrs",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://age/3-5y" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://age/3-5y"
+              }
+            }
           },
           {
             "id": "age-5y-plus",
-            "imageUrl": "https://cdn.kiddo.in/images/age-icons/5y-plus.webp",
+            "imageUrl": "https://picsum.photos/seed/age-5yplus/120/120",
             "label": "5 Yrs+",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://age/5y-plus" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://age/5y-plus"
+              }
+            }
           }
         ]
       }
     },
-
     {
       "id": "blk-03",
       "type": "PRODUCT_GRID_2X2",
@@ -118,14 +142,17 @@
         "title": "New Arrivals",
         "viewAllAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://collection/new-arrivals", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://collection/new-arrivals",
+            "presentationStyle": "push"
+          }
         },
         "products": [
           {
             "id": "PROD-001",
             "name": "Babyhug Organic Cotton Sleepsuit Set of 3",
             "brand": "Babyhug",
-            "imageUrl": "https://cdn.kiddo.in/images/clothing/prod-001.webp",
+            "imageUrl": "https://picsum.photos/seed/prod001/300/300",
             "priceInr": 1099,
             "originalPriceInr": 1399,
             "discountPercent": 21,
@@ -135,18 +162,24 @@
             "reviewCount": 312,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-001", "qty": 1 }
+              "payload": {
+                "productId": "PROD-001",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-001", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-001",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-002",
             "name": "Little's Bamboo Muslin Swaddle Blanket (Pack of 2)",
             "brand": "Little's",
-            "imageUrl": "https://cdn.kiddo.in/images/bedding/prod-002.webp",
+            "imageUrl": "https://picsum.photos/seed/prod002/300/300",
             "priceInr": 849,
             "originalPriceInr": 1049,
             "discountPercent": 19,
@@ -156,18 +189,24 @@
             "reviewCount": 508,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-002", "qty": 1 }
+              "payload": {
+                "productId": "PROD-002",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-002", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-002",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-003",
             "name": "LuvLap Comfort C-Shape Nursing & Feeding Pillow",
             "brand": "LuvLap",
-            "imageUrl": "https://cdn.kiddo.in/images/feeding/prod-003.webp",
+            "imageUrl": "https://picsum.photos/seed/prod003/300/300",
             "priceInr": 1499,
             "originalPriceInr": 1899,
             "discountPercent": 21,
@@ -176,18 +215,24 @@
             "reviewCount": 1203,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-003", "qty": 1 }
+              "payload": {
+                "productId": "PROD-003",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-003", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-003",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-004",
             "name": "Chicco Baby Hug 4-in-1 Bouncer & Rocker",
             "brand": "Chicco",
-            "imageUrl": "https://cdn.kiddo.in/images/gear/prod-004.webp",
+            "imageUrl": "https://picsum.photos/seed/prod004/300/300",
             "priceInr": 7999,
             "originalPriceInr": 9499,
             "discountPercent": 16,
@@ -197,35 +242,42 @@
             "reviewCount": 89,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-004", "qty": 1 }
+              "payload": {
+                "productId": "PROD-004",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-004", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-004",
+                "presentationStyle": "push"
+              }
             }
           }
         ]
       }
     },
-
     {
       "id": "blk-04",
       "type": "BANNER_HERO",
       "data": {
-        "imageUrl": "https://cdn.kiddo.in/images/banners/diaper-flash-sale-june2026.webp",
+        "imageUrl": "https://picsum.photos/seed/diaper-flash/800/320",
         "imageAltText": "Stack of diaper packs with a red sale tag",
         "title": "Diaper Flash Sale",
         "subtitle": "Up to 25% off on Huggies, Pampers & more. Today only!",
         "ctaLabel": "Grab the Deal",
         "ctaAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://category/diapers?source=flash_sale_banner", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://category/diapers?source=flash_sale_banner",
+            "presentationStyle": "push"
+          }
         },
         "aspectRatio": 2.5,
         "hasOverlayGradient": true
       }
     },
-
     {
       "id": "blk-05",
       "type": "PRODUCT_GRID_2X2",
@@ -233,14 +285,17 @@
         "title": "Top Diapers",
         "viewAllAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://category/diapers", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://category/diapers",
+            "presentationStyle": "push"
+          }
         },
         "products": [
           {
             "id": "PROD-005",
             "name": "Huggies Wonder Pants Large (54 Count)",
             "brand": "Huggies",
-            "imageUrl": "https://cdn.kiddo.in/images/diapers/prod-005.webp",
+            "imageUrl": "https://picsum.photos/seed/prod005/300/300",
             "priceInr": 1149,
             "originalPriceInr": 1499,
             "discountPercent": 23,
@@ -250,18 +305,24 @@
             "reviewCount": 24817,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-005", "qty": 1 }
+              "payload": {
+                "productId": "PROD-005",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-005", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-005",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-006",
             "name": "Pampers Active Baby Dry Medium (58 Count)",
             "brand": "Pampers",
-            "imageUrl": "https://cdn.kiddo.in/images/diapers/prod-006.webp",
+            "imageUrl": "https://picsum.photos/seed/prod006/300/300",
             "priceInr": 999,
             "originalPriceInr": 1299,
             "discountPercent": 23,
@@ -270,18 +331,24 @@
             "reviewCount": 19432,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-006", "qty": 1 }
+              "payload": {
+                "productId": "PROD-006",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-006", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-006",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-007",
             "name": "Mamy Poko Pants Extra Absorb XL (40 Count)",
             "brand": "Mamy Poko",
-            "imageUrl": "https://cdn.kiddo.in/images/diapers/prod-007.webp",
+            "imageUrl": "https://picsum.photos/seed/prod007/300/300",
             "priceInr": 799,
             "originalPriceInr": 999,
             "discountPercent": 20,
@@ -290,18 +357,24 @@
             "reviewCount": 11204,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-007", "qty": 1 }
+              "payload": {
+                "productId": "PROD-007",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-007", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-007",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-008",
             "name": "Babyhug Ultra Thin Dry XXL Diapers (36 Count)",
             "brand": "Babyhug",
-            "imageUrl": "https://cdn.kiddo.in/images/diapers/prod-008.webp",
+            "imageUrl": "https://picsum.photos/seed/prod008/300/300",
             "priceInr": 949,
             "originalPriceInr": 1149,
             "discountPercent": 17,
@@ -310,17 +383,22 @@
             "reviewCount": 3876,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-008", "qty": 1 }
+              "payload": {
+                "productId": "PROD-008",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-008", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-008",
+                "presentationStyle": "push"
+              }
             }
           }
         ]
       }
     },
-
     {
       "id": "blk-06",
       "type": "DYNAMIC_COLLECTION",
@@ -330,61 +408,103 @@
         "showViewAll": true,
         "viewAllAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://categories", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://categories",
+            "presentationStyle": "push"
+          }
         },
         "items": [
           {
             "id": "cat-diapers",
-            "imageUrl": "https://cdn.kiddo.in/images/categories/diapers.webp",
+            "imageUrl": "https://picsum.photos/seed/cat-diapers/120/120",
             "label": "Diapers",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://category/diapers" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://category/diapers"
+              }
+            }
           },
           {
             "id": "cat-baby-food",
-            "imageUrl": "https://cdn.kiddo.in/images/categories/baby-food.webp",
+            "imageUrl": "https://picsum.photos/seed/cat-babyfood/120/120",
             "label": "Baby Food",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://category/baby-food" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://category/baby-food"
+              }
+            }
           },
           {
             "id": "cat-clothing",
-            "imageUrl": "https://cdn.kiddo.in/images/categories/clothing.webp",
+            "imageUrl": "https://picsum.photos/seed/cat-clothing/120/120",
             "label": "Clothing",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://category/clothing" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://category/clothing"
+              }
+            }
           },
           {
             "id": "cat-toys",
-            "imageUrl": "https://cdn.kiddo.in/images/categories/toys.webp",
+            "imageUrl": "https://picsum.photos/seed/cat-toys/120/120",
             "label": "Toys",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://category/toys" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://category/toys"
+              }
+            }
           },
           {
             "id": "cat-health",
-            "imageUrl": "https://cdn.kiddo.in/images/categories/health.webp",
+            "imageUrl": "https://picsum.photos/seed/cat-health/120/120",
             "label": "Health & Care",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://category/health-care" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://category/health-care"
+              }
+            }
           },
           {
             "id": "cat-feeding",
-            "imageUrl": "https://cdn.kiddo.in/images/categories/feeding.webp",
+            "imageUrl": "https://picsum.photos/seed/cat-feeding/120/120",
             "label": "Feeding",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://category/feeding" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://category/feeding"
+              }
+            }
           },
           {
             "id": "cat-travel",
-            "imageUrl": "https://cdn.kiddo.in/images/categories/travel.webp",
+            "imageUrl": "https://picsum.photos/seed/cat-travel/120/120",
             "label": "Travel",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://category/travel" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://category/travel"
+              }
+            }
           },
           {
             "id": "cat-furniture",
-            "imageUrl": "https://cdn.kiddo.in/images/categories/furniture.webp",
+            "imageUrl": "https://picsum.photos/seed/cat-furn/120/120",
             "label": "Furniture",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://category/furniture" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://category/furniture"
+              }
+            }
           }
         ]
       }
     },
-
     {
       "id": "blk-07",
       "type": "PRODUCT_GRID_2X2",
@@ -392,14 +512,17 @@
         "title": "Baby Food Essentials",
         "viewAllAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://category/baby-food", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://category/baby-food",
+            "presentationStyle": "push"
+          }
         },
         "products": [
           {
             "id": "PROD-009",
             "name": "Nestlé CERELAC Fortified Baby Cereal Stage 1 Wheat (300g)",
             "brand": "Nestlé",
-            "imageUrl": "https://cdn.kiddo.in/images/baby-food/prod-009.webp",
+            "imageUrl": "https://picsum.photos/seed/prod009/300/300",
             "priceInr": 349,
             "originalPriceInr": 399,
             "discountPercent": 13,
@@ -409,18 +532,24 @@
             "reviewCount": 38642,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-009", "qty": 1 }
+              "payload": {
+                "productId": "PROD-009",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-009", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-009",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-010",
             "name": "Heinz Organic Apple & Mango Fruit Puree (120g × 4)",
             "brand": "Heinz",
-            "imageUrl": "https://cdn.kiddo.in/images/baby-food/prod-010.webp",
+            "imageUrl": "https://picsum.photos/seed/prod010/300/300",
             "priceInr": 649,
             "originalPriceInr": 799,
             "discountPercent": 19,
@@ -429,18 +558,24 @@
             "reviewCount": 7231,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-010", "qty": 1 }
+              "payload": {
+                "productId": "PROD-010",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-010", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-010",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-011",
             "name": "HiPP Organic Combiotic Follow-On Milk Stage 2 (500g)",
             "brand": "HiPP",
-            "imageUrl": "https://cdn.kiddo.in/images/baby-food/prod-011.webp",
+            "imageUrl": "https://picsum.photos/seed/prod011/300/300",
             "priceInr": 1199,
             "originalPriceInr": 1499,
             "discountPercent": 20,
@@ -449,18 +584,24 @@
             "reviewCount": 2109,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-011", "qty": 1 }
+              "payload": {
+                "productId": "PROD-011",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-011", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-011",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-012",
             "name": "Mead Johnson Enfagrow A+ Stage 3 Growing-Up Milk (400g)",
             "brand": "Mead Johnson",
-            "imageUrl": "https://cdn.kiddo.in/images/baby-food/prod-012.webp",
+            "imageUrl": "https://picsum.photos/seed/prod012/300/300",
             "priceInr": 1099,
             "originalPriceInr": 1349,
             "discountPercent": 19,
@@ -469,35 +610,42 @@
             "reviewCount": 4517,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-012", "qty": 1 }
+              "payload": {
+                "productId": "PROD-012",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-012", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-012",
+                "presentationStyle": "push"
+              }
             }
           }
         ]
       }
     },
-
     {
       "id": "blk-08",
       "type": "BANNER_HERO",
       "data": {
-        "imageUrl": "https://cdn.kiddo.in/images/banners/feeding-essentials-june2026.webp",
+        "imageUrl": "https://picsum.photos/seed/feeding-hero/800/400",
         "imageAltText": "Mother holding a baby bottle next to a breast pump",
         "title": "Feeding Made Simple",
         "subtitle": "Bottles, pumps & accessories trusted by 10 lakh+ mums",
         "ctaLabel": "Explore Feeding",
         "ctaAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://category/feeding", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://category/feeding",
+            "presentationStyle": "push"
+          }
         },
         "aspectRatio": 2.0,
         "hasOverlayGradient": false
       }
     },
-
     {
       "id": "blk-09",
       "type": "DYNAMIC_COLLECTION",
@@ -507,61 +655,103 @@
         "showViewAll": true,
         "viewAllAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://brands", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://brands",
+            "presentationStyle": "push"
+          }
         },
         "items": [
           {
             "id": "brand-huggies",
-            "imageUrl": "https://cdn.kiddo.in/images/brands/huggies.webp",
+            "imageUrl": "https://picsum.photos/seed/br-huggies/120/80",
             "label": "Huggies",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://brand/huggies" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://brand/huggies"
+              }
+            }
           },
           {
             "id": "brand-pampers",
-            "imageUrl": "https://cdn.kiddo.in/images/brands/pampers.webp",
+            "imageUrl": "https://picsum.photos/seed/br-pampers/120/80",
             "label": "Pampers",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://brand/pampers" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://brand/pampers"
+              }
+            }
           },
           {
             "id": "brand-fisher-price",
-            "imageUrl": "https://cdn.kiddo.in/images/brands/fisher-price.webp",
+            "imageUrl": "https://picsum.photos/seed/br-fisher/120/80",
             "label": "Fisher-Price",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://brand/fisher-price" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://brand/fisher-price"
+              }
+            }
           },
           {
             "id": "brand-nestle",
-            "imageUrl": "https://cdn.kiddo.in/images/brands/nestle.webp",
+            "imageUrl": "https://picsum.photos/seed/br-nestle/120/80",
             "label": "Nestlé",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://brand/nestle" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://brand/nestle"
+              }
+            }
           },
           {
             "id": "brand-johnsons",
-            "imageUrl": "https://cdn.kiddo.in/images/brands/johnsons.webp",
+            "imageUrl": "https://picsum.photos/seed/br-johnsons/120/80",
             "label": "Johnson's",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://brand/johnsons" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://brand/johnsons"
+              }
+            }
           },
           {
             "id": "brand-chicco",
-            "imageUrl": "https://cdn.kiddo.in/images/brands/chicco.webp",
+            "imageUrl": "https://picsum.photos/seed/br-chicco/120/80",
             "label": "Chicco",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://brand/chicco" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://brand/chicco"
+              }
+            }
           },
           {
             "id": "brand-himalaya",
-            "imageUrl": "https://cdn.kiddo.in/images/brands/himalaya.webp",
+            "imageUrl": "https://picsum.photos/seed/br-himalaya/120/80",
             "label": "Himalaya",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://brand/himalaya" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://brand/himalaya"
+              }
+            }
           },
           {
             "id": "brand-pigeon",
-            "imageUrl": "https://cdn.kiddo.in/images/brands/pigeon.webp",
+            "imageUrl": "https://picsum.photos/seed/br-pigeon/120/80",
             "label": "Pigeon",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://brand/pigeon" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://brand/pigeon"
+              }
+            }
           }
         ]
       }
     },
-
     {
       "id": "blk-10",
       "type": "PRODUCT_GRID_2X2",
@@ -569,14 +759,17 @@
         "title": "Feeding Accessories",
         "viewAllAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://category/feeding", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://category/feeding",
+            "presentationStyle": "push"
+          }
         },
         "products": [
           {
             "id": "PROD-013",
             "name": "Pigeon Wide Neck Glass Feeding Bottle Set (240 ml × 2)",
             "brand": "Pigeon",
-            "imageUrl": "https://cdn.kiddo.in/images/feeding/prod-013.webp",
+            "imageUrl": "https://picsum.photos/seed/prod013/300/300",
             "priceInr": 849,
             "originalPriceInr": 1049,
             "discountPercent": 19,
@@ -585,18 +778,24 @@
             "reviewCount": 9342,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-013", "qty": 1 }
+              "payload": {
+                "productId": "PROD-013",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-013", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-013",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-014",
             "name": "Dr. Brown's Options+ Anti-Colic Narrow Bottle 270 ml",
             "brand": "Dr. Brown's",
-            "imageUrl": "https://cdn.kiddo.in/images/feeding/prod-014.webp",
+            "imageUrl": "https://picsum.photos/seed/prod014/300/300",
             "priceInr": 1099,
             "originalPriceInr": 1399,
             "discountPercent": 21,
@@ -605,18 +804,24 @@
             "reviewCount": 6187,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-014", "qty": 1 }
+              "payload": {
+                "productId": "PROD-014",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-014", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-014",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-015",
             "name": "Chicco NaturalFeeling Silicone Teat Slow Flow (2-Pack)",
             "brand": "Chicco",
-            "imageUrl": "https://cdn.kiddo.in/images/feeding/prod-015.webp",
+            "imageUrl": "https://picsum.photos/seed/prod015/300/300",
             "priceInr": 499,
             "originalPriceInr": 649,
             "discountPercent": 23,
@@ -625,18 +830,24 @@
             "reviewCount": 2831,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-015", "qty": 1 }
+              "payload": {
+                "productId": "PROD-015",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-015", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-015",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-016",
             "name": "Lansinoh Breastmilk Storage Bags Self-Standing (50 Count)",
             "brand": "Lansinoh",
-            "imageUrl": "https://cdn.kiddo.in/images/feeding/prod-016.webp",
+            "imageUrl": "https://picsum.photos/seed/prod016/300/300",
             "priceInr": 999,
             "originalPriceInr": 1249,
             "discountPercent": 20,
@@ -645,35 +856,42 @@
             "reviewCount": 4092,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-016", "qty": 1 }
+              "payload": {
+                "productId": "PROD-016",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-016", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-016",
+                "presentationStyle": "push"
+              }
             }
           }
         ]
       }
     },
-
     {
       "id": "blk-11",
       "type": "BANNER_HERO",
       "data": {
-        "imageUrl": "https://cdn.kiddo.in/images/banners/summer-clothing-2026.webp",
+        "imageUrl": "https://picsum.photos/seed/summer-hero/800/418",
         "imageAltText": "Toddler in bright summer outfit playing in sprinklers",
         "title": "Summer Splash Collection",
         "subtitle": "Light, breathable styles for the heat. New drops daily.",
         "ctaLabel": "Shop Summer Styles",
         "ctaAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://collection/summer-2026", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://collection/summer-2026",
+            "presentationStyle": "push"
+          }
         },
         "aspectRatio": 1.91,
         "hasOverlayGradient": true
       }
     },
-
     {
       "id": "blk-12",
       "type": "PRODUCT_GRID_2X2",
@@ -681,14 +899,17 @@
         "title": "Baby Clothing",
         "viewAllAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://category/clothing", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://category/clothing",
+            "presentationStyle": "push"
+          }
         },
         "products": [
           {
             "id": "PROD-017",
             "name": "Mothercare Organic Cotton Sleepsuit with Feet (0–3 M)",
             "brand": "Mothercare",
-            "imageUrl": "https://cdn.kiddo.in/images/clothing/prod-017.webp",
+            "imageUrl": "https://picsum.photos/seed/prod017/300/300",
             "priceInr": 749,
             "originalPriceInr": 949,
             "discountPercent": 21,
@@ -697,18 +918,24 @@
             "reviewCount": 1874,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-017", "qty": 1 }
+              "payload": {
+                "productId": "PROD-017",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-017", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-017",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-018",
             "name": "Mee Mee Printed Cotton Romper Set (3–6 M)",
             "brand": "Mee Mee",
-            "imageUrl": "https://cdn.kiddo.in/images/clothing/prod-018.webp",
+            "imageUrl": "https://picsum.photos/seed/prod018/300/300",
             "priceInr": 549,
             "originalPriceInr": 699,
             "discountPercent": 21,
@@ -717,36 +944,48 @@
             "reviewCount": 2341,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-018", "qty": 1 }
+              "payload": {
+                "productId": "PROD-018",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-018", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-018",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "_comment": "INTENTIONAL_RESILIENCE_TEST: 'name' and 'inStock' are deliberately omitted to verify the product card renders gracefully with missing required fields",
             "id": "PROD-019",
             "brand": "FirstCry Basics",
-            "imageUrl": "https://cdn.kiddo.in/images/clothing/prod-019.webp",
+            "imageUrl": "https://picsum.photos/seed/prod019/300/300",
             "priceInr": 399,
             "discountPercent": 15,
             "rating": 3.9,
             "reviewCount": 567,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-019", "qty": 1 }
+              "payload": {
+                "productId": "PROD-019",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-019", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-019",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-020",
             "name": "Hopscotch Girls Floral Printed Fit & Flare Dress (2–3 Y)",
             "brand": "Hopscotch",
-            "imageUrl": "https://cdn.kiddo.in/images/clothing/prod-020.webp",
+            "imageUrl": "https://picsum.photos/seed/prod020/300/300",
             "priceInr": 999,
             "originalPriceInr": 1299,
             "discountPercent": 23,
@@ -755,17 +994,22 @@
             "reviewCount": 788,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-020", "qty": 1 }
+              "payload": {
+                "productId": "PROD-020",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-020", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-020",
+                "presentationStyle": "push"
+              }
             }
           }
         ]
       }
     },
-
     {
       "id": "blk-13",
       "type": "DYNAMIC_COLLECTION",
@@ -776,38 +1020,62 @@
         "items": [
           {
             "id": "budget-under-500",
-            "imageUrl": "https://cdn.kiddo.in/images/budget/under-500.webp",
+            "imageUrl": "https://picsum.photos/seed/budget-u500/120/120",
             "label": "Under ₹500",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://gifts?maxPrice=500" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://gifts?maxPrice=500"
+              }
+            }
           },
           {
             "id": "budget-500-1k",
-            "imageUrl": "https://cdn.kiddo.in/images/budget/500-1k.webp",
+            "imageUrl": "https://picsum.photos/seed/budget-5001k/120/120",
             "label": "₹500 – ₹1K",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://gifts?minPrice=500&maxPrice=1000" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://gifts?minPrice=500&maxPrice=1000"
+              }
+            }
           },
           {
             "id": "budget-1k-3k",
-            "imageUrl": "https://cdn.kiddo.in/images/budget/1k-3k.webp",
+            "imageUrl": "https://picsum.photos/seed/budget-1k3k/120/120",
             "label": "₹1K – ₹3K",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://gifts?minPrice=1000&maxPrice=3000" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://gifts?minPrice=1000&maxPrice=3000"
+              }
+            }
           },
           {
             "id": "budget-3k-10k",
-            "imageUrl": "https://cdn.kiddo.in/images/budget/3k-10k.webp",
+            "imageUrl": "https://picsum.photos/seed/budget-3k10k/120/120",
             "label": "₹3K – ₹10K",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://gifts?minPrice=3000&maxPrice=10000" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://gifts?minPrice=3000&maxPrice=10000"
+              }
+            }
           },
           {
             "id": "budget-10k-plus",
-            "imageUrl": "https://cdn.kiddo.in/images/budget/10k-plus.webp",
+            "imageUrl": "https://picsum.photos/seed/budget-10k/120/120",
             "label": "₹10K+",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://gifts?minPrice=10000" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://gifts?minPrice=10000"
+              }
+            }
           }
         ]
       }
     },
-
     {
       "id": "blk-14",
       "type": "PRODUCT_GRID_2X2",
@@ -815,14 +1083,17 @@
         "title": "Most Loved Toys",
         "viewAllAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://category/toys", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://category/toys",
+            "presentationStyle": "push"
+          }
         },
         "products": [
           {
             "id": "PROD-021",
             "name": "Fisher-Price Laugh & Learn Smart Stages Chair",
             "brand": "Fisher-Price",
-            "imageUrl": "https://cdn.kiddo.in/images/toys/prod-021.webp",
+            "imageUrl": "https://picsum.photos/seed/prod021/300/300",
             "priceInr": 2299,
             "originalPriceInr": 2799,
             "discountPercent": 18,
@@ -832,18 +1103,24 @@
             "reviewCount": 12083,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-021", "qty": 1 }
+              "payload": {
+                "productId": "PROD-021",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-021", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-021",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-022",
             "name": "Melissa & Doug Farm Animals Wooden Peg Puzzle",
             "brand": "Melissa & Doug",
-            "imageUrl": "https://cdn.kiddo.in/images/toys/prod-022.webp",
+            "imageUrl": "https://picsum.photos/seed/prod022/300/300",
             "priceInr": 849,
             "originalPriceInr": 1049,
             "discountPercent": 19,
@@ -852,18 +1129,24 @@
             "reviewCount": 5924,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-022", "qty": 1 }
+              "payload": {
+                "productId": "PROD-022",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-022", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-022",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-023",
             "name": "VTech Sort & Discover Activity Cube",
             "brand": "VTech",
-            "imageUrl": "https://cdn.kiddo.in/images/toys/prod-023.webp",
+            "imageUrl": "https://picsum.photos/seed/prod023/300/300",
             "priceInr": 1249,
             "originalPriceInr": 1549,
             "discountPercent": 19,
@@ -872,18 +1155,24 @@
             "reviewCount": 3417,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-023", "qty": 1 }
+              "payload": {
+                "productId": "PROD-023",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-023", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-023",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-024",
             "name": "LEGO DUPLO Classic Brick Box (190 Pieces)",
             "brand": "LEGO",
-            "imageUrl": "https://cdn.kiddo.in/images/toys/prod-024.webp",
+            "imageUrl": "https://picsum.photos/seed/prod024/300/300",
             "priceInr": 3199,
             "originalPriceInr": 3999,
             "discountPercent": 20,
@@ -893,22 +1182,27 @@
             "reviewCount": 21456,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-024", "qty": 1 }
+              "payload": {
+                "productId": "PROD-024",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-024", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-024",
+                "presentationStyle": "push"
+              }
             }
           }
         ]
       }
     },
-
     {
       "id": "blk-15",
       "type": "BANNER_HERO",
       "data": {
-        "imageUrl": "https://cdn.kiddo.in/images/banners/mystery-gift-june2026.webp",
+        "imageUrl": "https://picsum.photos/seed/mystery-hero/800/500",
         "imageAltText": "Glowing gift box surrounded by floating stars on a purple background",
         "title": "You've Unlocked a Mystery Gift!",
         "subtitle": "Spend ₹500 more and reveal your surprise. Limited to first 5,000 orders.",
@@ -925,7 +1219,6 @@
         "hasOverlayGradient": true
       }
     },
-
     {
       "id": "blk-16",
       "type": "PRODUCT_GRID_2X2",
@@ -933,14 +1226,17 @@
         "title": "Baby Health & Hygiene",
         "viewAllAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://category/health-care", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://category/health-care",
+            "presentationStyle": "push"
+          }
         },
         "products": [
           {
             "id": "PROD-025",
             "name": "Himalaya Baby Massage Oil with Almond & Olive (100 ml)",
             "brand": "Himalaya",
-            "imageUrl": "https://cdn.kiddo.in/images/health/prod-025.webp",
+            "imageUrl": "https://picsum.photos/seed/prod025/300/300",
             "priceInr": 179,
             "originalPriceInr": 215,
             "discountPercent": 17,
@@ -949,18 +1245,24 @@
             "reviewCount": 44291,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-025", "qty": 1 }
+              "payload": {
+                "productId": "PROD-025",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-025", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-025",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-026",
             "name": "Johnson's Baby Top-to-Toe Wash (200 ml)",
             "brand": "Johnson's",
-            "imageUrl": "https://cdn.kiddo.in/images/health/prod-026.webp",
+            "imageUrl": "https://picsum.photos/seed/prod026/300/300",
             "priceInr": 159,
             "originalPriceInr": 199,
             "discountPercent": 20,
@@ -969,18 +1271,24 @@
             "reviewCount": 29817,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-026", "qty": 1 }
+              "payload": {
+                "productId": "PROD-026",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-026", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-026",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-027",
             "name": "Mamaearth Gentle Cleansing Baby Shampoo Tear-Free (400 ml)",
             "brand": "Mamaearth",
-            "imageUrl": "https://cdn.kiddo.in/images/health/prod-027.webp",
+            "imageUrl": "https://picsum.photos/seed/prod027/300/300",
             "priceInr": 309,
             "originalPriceInr": 399,
             "discountPercent": 23,
@@ -989,18 +1297,24 @@
             "reviewCount": 18302,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-027", "qty": 1 }
+              "payload": {
+                "productId": "PROD-027",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-027", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-027",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-028",
             "name": "Little's Soft Cleansing Fragrance-Free Baby Wipes (80 × 2)",
             "brand": "Little's",
-            "imageUrl": "https://cdn.kiddo.in/images/health/prod-028.webp",
+            "imageUrl": "https://picsum.photos/seed/prod028/300/300",
             "priceInr": 259,
             "originalPriceInr": 329,
             "discountPercent": 21,
@@ -1009,17 +1323,22 @@
             "reviewCount": 31740,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-028", "qty": 1 }
+              "payload": {
+                "productId": "PROD-028",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-028", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-028",
+                "presentationStyle": "push"
+              }
             }
           }
         ]
       }
     },
-
     {
       "id": "blk-17",
       "type": "DYNAMIC_COLLECTION",
@@ -1030,38 +1349,62 @@
         "items": [
           {
             "id": "rv-PROD-005",
-            "imageUrl": "https://cdn.kiddo.in/images/diapers/prod-005.webp",
+            "imageUrl": "https://picsum.photos/seed/prod005/300/300",
             "label": "Huggies Wonder Pants L",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://product/PROD-005" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://product/PROD-005"
+              }
+            }
           },
           {
             "id": "rv-PROD-021",
-            "imageUrl": "https://cdn.kiddo.in/images/toys/prod-021.webp",
+            "imageUrl": "https://picsum.photos/seed/prod021/300/300",
             "label": "Fisher-Price L&L Chair",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://product/PROD-021" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://product/PROD-021"
+              }
+            }
           },
           {
             "id": "rv-PROD-009",
-            "imageUrl": "https://cdn.kiddo.in/images/baby-food/prod-009.webp",
+            "imageUrl": "https://picsum.photos/seed/prod009/300/300",
             "label": "Nestlé CERELAC Stage 1",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://product/PROD-009" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://product/PROD-009"
+              }
+            }
           },
           {
             "id": "rv-PROD-025",
-            "imageUrl": "https://cdn.kiddo.in/images/health/prod-025.webp",
+            "imageUrl": "https://picsum.photos/seed/prod025/300/300",
             "label": "Himalaya Baby Oil",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://product/PROD-025" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://product/PROD-025"
+              }
+            }
           },
           {
             "id": "rv-PROD-001",
-            "imageUrl": "https://cdn.kiddo.in/images/clothing/prod-001.webp",
+            "imageUrl": "https://picsum.photos/seed/prod001/300/300",
             "label": "Babyhug Sleepsuit Set",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://product/PROD-001" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://product/PROD-001"
+              }
+            }
           }
         ]
       }
     },
-
     {
       "id": "blk-18",
       "type": "PRODUCT_GRID_2X2",
@@ -1069,14 +1412,17 @@
         "title": "Premium Picks",
         "viewAllAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://collection/premium", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://collection/premium",
+            "presentationStyle": "push"
+          }
         },
         "products": [
           {
             "id": "PROD-029",
             "name": "Bugaboo Fox 5 Complete Pushchair with Carrycot (Midnight Black)",
             "brand": "Bugaboo",
-            "imageUrl": "https://cdn.kiddo.in/images/gear/prod-029.webp",
+            "imageUrl": "https://picsum.photos/seed/prod029/300/300",
             "priceInr": 89999,
             "originalPriceInr": 99999,
             "discountPercent": 10,
@@ -1086,18 +1432,24 @@
             "reviewCount": 342,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-029", "qty": 1 }
+              "payload": {
+                "productId": "PROD-029",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-029", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-029",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-030",
             "name": "Cybex Sirona S2 i-Size 360° Rotating Baby Car Seat",
             "brand": "Cybex",
-            "imageUrl": "https://cdn.kiddo.in/images/gear/prod-030.webp",
+            "imageUrl": "https://picsum.photos/seed/prod030/300/300",
             "priceInr": 49999,
             "originalPriceInr": 55999,
             "discountPercent": 11,
@@ -1107,18 +1459,24 @@
             "reviewCount": 891,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-030", "qty": 1 }
+              "payload": {
+                "productId": "PROD-030",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-030", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-030",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-031",
             "name": "Stokke Tripp Trapp Wooden High Chair (Oak Natural)",
             "brand": "Stokke",
-            "imageUrl": "https://cdn.kiddo.in/images/furniture/prod-031.webp",
+            "imageUrl": "https://picsum.photos/seed/prod031/300/300",
             "priceInr": 27999,
             "originalPriceInr": 31999,
             "discountPercent": 13,
@@ -1128,18 +1486,24 @@
             "reviewCount": 1247,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-031", "qty": 1 }
+              "payload": {
+                "productId": "PROD-031",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-031", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-031",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-032",
             "name": "SNOO Smart Sleeper Bassinet by Happiest Baby",
             "brand": "Happiest Baby",
-            "imageUrl": "https://cdn.kiddo.in/images/furniture/prod-032.webp",
+            "imageUrl": "https://picsum.photos/seed/prod032/300/300",
             "priceInr": 67999,
             "originalPriceInr": 74999,
             "discountPercent": 9,
@@ -1149,35 +1513,42 @@
             "reviewCount": 218,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-032", "qty": 1 }
+              "payload": {
+                "productId": "PROD-032",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-032", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-032",
+                "presentationStyle": "push"
+              }
             }
           }
         ]
       }
     },
-
     {
       "id": "blk-19",
       "type": "BANNER_HERO",
       "data": {
-        "imageUrl": "https://cdn.kiddo.in/images/banners/app-exclusive-june2026.webp",
+        "imageUrl": "https://picsum.photos/seed/app-exclusive/800/320",
         "imageAltText": "Phone screen showing a 10% discount badge with confetti",
         "title": "App Exclusive Offer",
         "subtitle": "Extra 10% off on your next 3 orders. No coupon needed.",
         "ctaLabel": "Activate Offer",
         "ctaAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://offers/app-exclusive-10off", "presentationStyle": "modal" }
+          "payload": {
+            "url": "kiddo://offers/app-exclusive-10off",
+            "presentationStyle": "modal"
+          }
         },
         "aspectRatio": 2.5,
         "hasOverlayGradient": false
       }
     },
-
     {
       "_comment": "INTENTIONAL_RESILIENCE_TEST: block type 'NEW_COMPONENT_V2' is not registered in ComponentRegistry — the renderer must return null without throwing",
       "id": "blk-20",
@@ -1189,18 +1560,17 @@
         "tiles": [
           {
             "tileId": "t-monsoon",
-            "imageUrl": "https://cdn.kiddo.in/images/seasonal/monsoon-essentials.webp",
+            "imageUrl": "https://picsum.photos/seed/sea-monsoon2/300/200",
             "deepLink": "kiddo://collection/monsoon-essentials"
           },
           {
             "tileId": "t-school",
-            "imageUrl": "https://cdn.kiddo.in/images/seasonal/back-to-school.webp",
+            "imageUrl": "https://picsum.photos/seed/sea-school2/300/200",
             "deepLink": "kiddo://collection/back-to-school-2026"
           }
         ]
       }
     },
-
     {
       "id": "blk-21",
       "type": "PRODUCT_GRID_2X2",
@@ -1208,14 +1578,17 @@
         "title": "Flash Deals — Ends Tonight!",
         "viewAllAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://flash-deals", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://flash-deals",
+            "presentationStyle": "push"
+          }
         },
         "products": [
           {
             "id": "PROD-033",
             "name": "Hamleys 3-in-1 Wooden Activity & Art Table with Stool",
             "brand": "Hamleys",
-            "imageUrl": "https://cdn.kiddo.in/images/toys/prod-033.webp",
+            "imageUrl": "https://picsum.photos/seed/prod033/300/300",
             "priceInr": 1999,
             "originalPriceInr": 3499,
             "discountPercent": 43,
@@ -1225,18 +1598,24 @@
             "reviewCount": 674,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-033", "qty": 1 }
+              "payload": {
+                "productId": "PROD-033",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-033", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-033",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-034",
             "name": "Chicco Multi-Level Baby Carrier Backpack (15 kg)",
             "brand": "Chicco",
-            "imageUrl": "https://cdn.kiddo.in/images/travel/prod-034.webp",
+            "imageUrl": "https://picsum.photos/seed/prod034/300/300",
             "priceInr": 5499,
             "originalPriceInr": 7999,
             "discountPercent": 31,
@@ -1246,18 +1625,24 @@
             "reviewCount": 1102,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-034", "qty": 1 }
+              "payload": {
+                "productId": "PROD-034",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-034", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-034",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-035",
             "name": "Safety 1st Smart WiFi Video Baby Monitor with 360° Pan/Tilt",
             "brand": "Safety 1st",
-            "imageUrl": "https://cdn.kiddo.in/images/gear/prod-035.webp",
+            "imageUrl": "https://picsum.photos/seed/prod035/300/300",
             "priceInr": 3299,
             "originalPriceInr": 5499,
             "discountPercent": 40,
@@ -1267,18 +1652,24 @@
             "reviewCount": 887,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-035", "qty": 1 }
+              "payload": {
+                "productId": "PROD-035",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-035", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-035",
+                "presentationStyle": "push"
+              }
             }
           },
           {
             "id": "PROD-036",
             "name": "Graco SlimFit 3-in-1 Convertible Car Seat (Darcie Grey)",
             "brand": "Graco",
-            "imageUrl": "https://cdn.kiddo.in/images/travel/prod-036.webp",
+            "imageUrl": "https://picsum.photos/seed/prod036/300/300",
             "priceInr": 14999,
             "originalPriceInr": 21999,
             "discountPercent": 32,
@@ -1288,17 +1679,22 @@
             "reviewCount": 2391,
             "addToCartAction": {
               "type": "ADD_TO_CART",
-              "payload": { "productId": "PROD-036", "qty": 1 }
+              "payload": {
+                "productId": "PROD-036",
+                "qty": 1
+              }
             },
             "tapAction": {
               "type": "DEEP_LINK",
-              "payload": { "url": "kiddo://product/PROD-036", "presentationStyle": "push" }
+              "payload": {
+                "url": "kiddo://product/PROD-036",
+                "presentationStyle": "push"
+              }
             }
           }
         ]
       }
     },
-
     {
       "id": "blk-22",
       "type": "DYNAMIC_COLLECTION",
@@ -1308,39 +1704,60 @@
         "showViewAll": true,
         "viewAllAction": {
           "type": "DEEP_LINK",
-          "payload": { "url": "kiddo://seasonal", "presentationStyle": "push" }
+          "payload": {
+            "url": "kiddo://seasonal",
+            "presentationStyle": "push"
+          }
         },
         "items": [
           {
             "id": "season-monsoon",
-            "imageUrl": "https://cdn.kiddo.in/images/seasonal/monsoon-icon.webp",
+            "imageUrl": "https://picsum.photos/seed/sea-monsoon/120/120",
             "label": "Monsoon Essentials",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://collection/monsoon-essentials" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://collection/monsoon-essentials"
+              }
+            }
           },
           {
             "id": "season-school",
-            "imageUrl": "https://cdn.kiddo.in/images/seasonal/back-to-school-icon.webp",
+            "imageUrl": "https://picsum.photos/seed/sea-school/120/120",
             "label": "Back to School",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://collection/back-to-school-2026" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://collection/back-to-school-2026"
+              }
+            }
           },
           {
             "id": "season-festival",
-            "imageUrl": "https://cdn.kiddo.in/images/seasonal/festival-icon.webp",
+            "imageUrl": "https://picsum.photos/seed/sea-festival/120/120",
             "label": "Festival Gifts",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://collection/festival-gifts-2026" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://collection/festival-gifts-2026"
+              }
+            }
           },
           {
             "id": "season-winter",
-            "imageUrl": "https://cdn.kiddo.in/images/seasonal/winter-icon.webp",
+            "imageUrl": "https://picsum.photos/seed/sea-winter/120/120",
             "label": "Winter Warmers",
-            "action": { "type": "DEEP_LINK", "payload": { "url": "kiddo://collection/winter-warmers" } }
+            "action": {
+              "type": "DEEP_LINK",
+              "payload": {
+                "url": "kiddo://collection/winter-warmers"
+              }
+            }
           }
         ]
       }
     }
-
   ],
-
   "campaigns": [
     {
       "id": "camp-mystery-gift-2026",

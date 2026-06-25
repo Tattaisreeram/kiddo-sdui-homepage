@@ -3,9 +3,9 @@ import { StyleSheet, View, Text, Pressable } from 'react-native';
 import { Image } from 'expo-image';
 import { useRecyclingState } from '@shopify/flash-list';
 import type { Block, Product } from '../../types/sdui';
+import { useCartStore } from '../../store/cartStore';
 import { isProductGrid2x2Block } from '../../types/sdui';
 import { handleAction } from '../../actions/dispatcher';
-import { useCartStore } from '../../store/cartStore';
 import { useTheme } from '../../theme/ThemeContext';
 
 // Re-render isolation:
@@ -33,7 +33,6 @@ const ProductCard = React.memo(function ProductCard({ product }: { readonly prod
   }
 
   const handleAdd = () => {
-    useCartStore.getState().addToCart(product.id);
     setLocalQty((q) => q + 1);
     handleAction(product.addToCartAction);
   };

@@ -109,6 +109,7 @@ function HomeScreenInner() {
         keyExtractor={keyExtractor}
         getItemType={getItemType}
         renderItem={renderItem}
+        contentContainerStyle={__DEV__ ? { paddingBottom: 100 } : undefined}
       />
       <View style={styles.cartAnchor} pointerEvents="box-none">
         <CartBadge />

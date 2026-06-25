@@ -1,6 +1,7 @@
 import { Alert } from 'react-native';
 import type { Action, Screen } from '../types/sdui';
 import { useHomepageStore } from '../store/homepageStore';
+import { useCartStore } from '../store/cartStore';
 import screenDataJson from '../data/homepage.json';
 
 const screen = screenDataJson as unknown as Screen;
@@ -12,14 +13,13 @@ function assertNever(x: never): never {
 export function handleAction(action: Action): void {
   switch (action.type) {
     case 'ADD_TO_CART': {
-      const { productId, qty, variantId } = action.payload;
-      useHomepageStore.getState().addToCart(productId, qty, variantId);
+      const { productId } = action.payload;
+      useCartStore.getState().addToCart(productId);
       break;
     }
     case 'DEEP_LINK': {
-      const { url, presentationStyle = 'push' } = action.payload;
-      // TODO: replace with expo-router navigate
-      console.log(`[DEEP_LINK] ${presentationStyle} -> ${url}`);
+      const { url } = action.payload;
+      Alert.alert('Kiddo', `Opening: ${url}`, [{ text: 'OK' }]);
       break;
     }
     case 'APPLY_MYSTERY_GIFT_COUPON': {
